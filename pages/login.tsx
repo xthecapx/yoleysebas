@@ -11,9 +11,9 @@ export default function Login(): JSX.Element {
       const response = await firebase
         .auth()
         .signInWithEmailAndPassword(email, email)
-      console.log(response)
+      // console.log(response)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   }
   return (
