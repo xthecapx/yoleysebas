@@ -1,10 +1,21 @@
-import { useState, useEffect, createContext, useContext } from 'react'
+import {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  ReactChildren,
+  ReactChild,
+} from 'react'
 import { useRouter } from 'next/router'
 import firebase from '../firebase/clientApp'
 
-export const UserContext = createContext()
+export const UserContext = createContext(null)
 
-export default function UserContextComp({ children }) {
+export default function UserContextComp({
+  children,
+}: {
+  children: ReactChild | ReactChildren
+}): JSX.Element {
   const [user, setUser] = useState(null)
   const router = useRouter()
   const [loadingUser, setLoadingUser] = useState(true) // Helpful, to update the UI accordingly.
@@ -15,7 +26,6 @@ export default function UserContextComp({ children }) {
       try {
         if (user) {
           // User is signed in.
-          console.log({ user })
           const { uid, displayName, email, photoURL } = user
           // You could also look for the user doc in your Firestore (if you have one):
           // const userDoc = await firebase.firestore().doc(`users/${uid}`).get()
@@ -44,4 +54,4 @@ export default function UserContextComp({ children }) {
 }
 
 // Custom hook that shorthands the context!
-export const useUser = () => useContext(UserContext)
+export const useUser = (): JSX.Element => useContext(UserContext)
