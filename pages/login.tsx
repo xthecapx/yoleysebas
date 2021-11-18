@@ -8,10 +8,7 @@ export default function Login(): JSX.Element {
   const [email, setEmail] = useState('')
   const login = async (email: string) => {
     try {
-      const response = await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, email)
-      // console.log(response)
+      await firebase.auth().signInWithEmailAndPassword(email, email)
     } catch (error) {
       // console.log(error)
     }
