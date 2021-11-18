@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import firebase from '../firebase/clientApp'
 
 export default function Header(): JSX.Element {
   const [
@@ -13,6 +14,14 @@ export default function Header(): JSX.Element {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const logout = async () => {
+    try {
+      await firebase.auth().signOut()
+    } catch (error) {
+      // console.log(error)
+    }
+  }
 
   return (
     <header
@@ -58,10 +67,15 @@ export default function Header(): JSX.Element {
               <nav className="main-menu menu-mobile ml-auto" id="menu">
                 <ul className="menu">
                   <li className="mega-menu-item active">
+                    <a href="#" className="mega-menu-link" onClick={logout}>
+                      Logout
+                    </a>
+                  </li>
+                  <li className="mega-menu-item active">
                     <a href="#" className="mega-menu-link">
                       Home
                     </a>
-                    <ul className="mega-submenu">
+                    {/*<ul className="mega-submenu">
                       <li className="active">
                         <a href="index.html">Home Wedding</a>
                       </li>
@@ -100,7 +114,7 @@ export default function Header(): JSX.Element {
                           </li>
                         </ul>
                       </li>
-                    </ul>
+                  </ul>*/}
                   </li>
                   <li className="mega-menu-item">
                     <a href="#" className="mega-menu-link">

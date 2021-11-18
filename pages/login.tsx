@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import firebase from '../firebase/clientApp'
+import mainImage from '../public/images/proposal/proposal9.jpeg'
+
+import Image from 'next/image'
 import { useState } from 'react'
 
 // Custom App to wrap it with context provider
@@ -13,23 +16,24 @@ export default function Login(): JSX.Element {
       // console.log(error)
     }
   }
+
   return (
     <>
-      <div
-        className="w-full h-screen md:-mx-4"
-        style={{
-          filter: 'blur(6px)',
-          backgroundImage: "url('/images/image-01.jpg')",
-        }}
-      />
+      <div className="w-full h-screen md:-mx-4 login-bg" />
       <div
         className="absolute w-3/5 bg-white"
         style={{ transform: 'translate(-50%, -50%)', top: '50%', left: '50%' }}
       >
         <div className="flex justify-center -mt-10">
-          <img
-            className="border-2 w-20 h-20 rounded-full"
-            src="/images/image-01.jpg"
+          <Image
+            src={mainImage}
+            alt="proposal 2"
+            className="border-2 rounded-full"
+            placeholder="blur"
+            quality="90"
+            layout="fixed"
+            width="80"
+            height="80"
           />
         </div>
         <div className="px-12 py-10">
