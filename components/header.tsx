@@ -37,27 +37,7 @@ export default function Header(): JSX.Element {
         <div className="site-header-menu-inner ttm-stickable-header">
           <div className="container">
             <div className="site-navigation d-flex flex-row align-items-center">
-              <div className="site-branding">
-                <a
-                  className="home-link"
-                  href="index.html"
-                  title="wedco"
-                  rel="home"
-                >
-                  <img
-                    id="logo-img"
-                    className="img-center standardlogo"
-                    src="/images/logo-img.png"
-                    alt="logo-img"
-                  />
-                  <img
-                    id="logo-dark"
-                    className="img-center stickylogo"
-                    src="/images/logo-dark.png"
-                    alt="logo-img"
-                  />
-                </a>
-              </div>
+              <div className="site-branding">Yole y Sebas</div>
               <div className="btn-show-menu-mobile menubar menubar--squeeze">
                 <span className="menubar-box">
                   <span className="menubar-inner"></span>
