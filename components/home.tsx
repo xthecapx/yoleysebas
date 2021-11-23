@@ -3,6 +3,9 @@ import SiteMain from './siteMain'
 import Cards from './cards'
 import SaveTheDate from './saveTheDate'
 import Confirmation from './confirmation'
+import Services from './services'
+import Plans from './plans'
+import Footer from './footer'
 
 export default function Home(): JSX.Element {
   return (
@@ -10,8 +13,11 @@ export default function Home(): JSX.Element {
       <Header />
       <SiteMain />
       <Cards />
+      <Services />
       <SaveTheDate />
+      <Plans />
       <Confirmation />
+      <Footer />
     </div>
   )
 }

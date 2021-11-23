@@ -3,30 +3,21 @@ import SaveTheDateImage from '../public/images/proposal/proposal6.jpeg'
 
 export default function SaveTheDate(): JSX.Element {
   return (
-    <section className="ttm-row broken-section bg-layer-equal-height bg-img1 ttm-bg ttm-bgimage-yes clearfix">
-      <div className="container">
-        <div className="row mt_195 mb-90 res-991-mt-60 res-991-mb-60">
+    <section className="ttm-row broken-section bg-layer-equal-height bg-img1 ttm-bg ttm-bgimage-yes">
+      <div className="container max-w-screen-lg md:mx-auto">
+        <div className="row mt_195 res-991-mt-60">
           <div className="col-lg-6 col-md-12">
-            <div className="col-bg-img-three ttm-col-bgimage-yes ttm-bg">
-              <div className="ttm-col-wrapper-bg-layer ttm-bg-layer">
-                <div className="ttm-col-wrapper-bg-layer-inner"></div>
-              </div>
-              <div className="layer-content"></div>
-              <Image
-                src={SaveTheDateImage}
-                alt="Save the date image"
-                placeholder="blur"
-                quality="90"
-                layout="responsive"
-                className="ttm-equal-height-image"
-              />
-            </div>
+            <Image
+              src={SaveTheDateImage}
+              alt="Save the date image"
+              placeholder="blur"
+              quality="90"
+              layout="responsive"
+              className="ttm-equal-height-image"
+            />
           </div>
           <div className="col-lg-6 col-md-12">
             <div className="ttm-col-bgcolor-yes ttm-bg ttm-bgcolor-skincolor spacing-3 h-auto">
-              <div className="ttm-col-wrapper-bg-layer ttm-bg-layer">
-                <div className="ttm-col-wrapper-bg-layer-inner"></div>
-              </div>
               <div className="layer-content">
                 <div className="ttm-col-bgcolor-yes ttm-bgcolor-white ttm-col-bgimage-yes col-bg-img-six ttm-bg">
                   <div className="layer-content">

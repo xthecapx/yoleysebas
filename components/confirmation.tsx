@@ -3,8 +3,8 @@ import ConfirmationImage from '../public/images/proposal/proposal14.jpeg'
 
 export default function Confirmation(): JSX.Element {
   return (
-    <section className="ttm-row contact-section clearfix">
-      <div className="container">
+    <section className="ttm-row contact-section">
+      <div className="container max-w-screen-lg md:mx-auto">
         <div className="row">
           <div className="col-lg-12">
             <div className="row">
