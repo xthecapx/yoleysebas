@@ -25,11 +25,8 @@ export default function Header(): JSX.Element {
   }
 
   return (
-    <header id="masthead" className="header ttm-header-style-01">
-      <div
-        id="site-header-menu"
-        className="site-header-menu ttm-bgcolor-darkgrey"
-      >
+    <header className="header ttm-header-style-01">
+      <div id="site-header-menu" className="site-header-menu ttm-bgcolor-white">
         <div
           className={clsx('site-header-menu-inner ttm-stickable-header', {
             'fixed-header': isScrollValueMoreThanHeaderHeight,
@@ -37,7 +34,7 @@ export default function Header(): JSX.Element {
         >
           <div className="container max-w-screen-lg md:mx-auto">
             <div className="site-navigation d-flex flex-row align-items-center">
-              <div className="site-branding">Yole y Sebas</div>
+              <div className="site-branding">#Yole&amp;Sebas</div>
               <div className="btn-show-menu-mobile menubar menubar--squeeze">
                 <span className="menubar-box">
                   <span className="menubar-inner"></span>
