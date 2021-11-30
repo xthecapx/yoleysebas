@@ -1,4 +1,14 @@
+import { useState } from 'react'
 import Image from 'next/image'
+import Slider from './slider'
+import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+import DialogTitle from '@mui/material/DialogTitle'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import IconButton from '@mui/material/IconButton'
+import Close from '@mui/icons-material/Close'
+import { useTheme } from '@mui/material/styles'
 
 function importAll(r) {
   return r.keys().map(r)
@@ -21,28 +31,76 @@ const imagesChunks = i.reduce((resultArray, item, index) => {
   return resultArray
 }, [])
 
+const lengths = imagesChunks.map((chunk) => chunk.length)
+
 export default function Gallery(): JSX.Element {
+  const [open, setOpen] = useState(false)
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'))
+  const [selected, setSelected] = useState({ column: 0, row: 0 })
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
+  const prev = lengths.reduce((acc, length, index) => {
+    if (index >= selected.column) {
+      return acc
+    }
+
+    return acc + length
+  }, 0)
+  const index = prev + selected.row
+
   return (
-    <div className="ttm-row">
+    <div className="gallery" id="gallery">
       <div className="container">
         <div className="image-row">
-          {imagesChunks.map((chunk, index) => (
-            <div key={index} className="image-column">
-              {chunk.map((image, index) => (
+          {imagesChunks.map((chunk, column) => (
+            <div key={column} className="image-column">
+              {chunk.map((image, row) => (
                 <Image
-                  key={index}
+                  key={row}
                   src={image}
                   alt="Main Image"
                   placeholder="blur"
                   quality="90"
                   className="image-zoom"
+                  onClick={() => {
+                    handleOpen()
+                    setSelected({ column, row })
+                  }}
                 />
               ))}
             </div>
           ))}
         </div>
       </div>
+      <Dialog
+        fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <DialogTitle className="flex justify-end">
+          <IconButton
+            color="primary"
+            aria-label="close modal"
+            component="span"
+            onClick={handleClose}
+          >
+            <Close />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            <Slider images={i} index={index} />
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
       <style jsx>{`
+        .gallery {
+          padding: 15px;
+        }
+
         .image-row {
           display: -ms-flexbox; /* IE10 */
           display: flex;

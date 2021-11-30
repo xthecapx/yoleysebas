@@ -24,6 +24,12 @@ export default function Header(): JSX.Element {
     }
   }
 
+  const navigateTo = (path: string) => {
+    document.querySelector(path).scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <header className="header ttm-header-style-01">
       <div id="site-header-menu" className="site-header-menu ttm-bgcolor-white">
@@ -49,8 +55,15 @@ export default function Header(): JSX.Element {
                     </a>
                   </li>
                   <li className="mega-menu-item">
-                    <a href="#" className="mega-menu-link">
-                      La boda
+                    <a
+                      href="#"
+                      className="mega-menu-link"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        navigateTo('#gallery')
+                      }}
+                    >
+                      La pedida de mano
                     </a>
                   </li>
                   <li className="mega-menu-item">
@@ -58,7 +71,7 @@ export default function Header(): JSX.Element {
                       Preparacion
                     </a>
                   </li>
-                  <li className="mega-menu-item">
+                  {/* <li className="mega-menu-item">
                     <a href="#" className="mega-menu-link">
                       Save the date
                     </a>
@@ -72,7 +85,7 @@ export default function Header(): JSX.Element {
                     <a href="#" className="mega-menu-link">
                       Contacto
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="contact-us.html">Contact Us</a>
                   </li>

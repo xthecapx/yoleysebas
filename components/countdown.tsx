@@ -1,22 +1,80 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useRef, useState } from 'react'
+
+const countDownDate = new Date('April 30, 2022 18:00:00').getTime()
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef(null)
+
+  useEffect(() => {
+    savedCallback.current = callback
+  }, [callback])
+
+  useEffect(() => {
+    function tick() {
+      if (savedCallback.current) savedCallback.current()
+    }
+
+    if (delay !== null) {
+      const id = setInterval(tick, delay)
+
+      return () => clearInterval(id)
+    }
+  }, [delay])
+}
+
+const twoDigits = (num) => String(num).padStart(2, '0')
 
 export default function Countdown(): JSX.Element {
+  const [days, setDays] = useState(0)
+  const [hours, setHours] = useState(0)
+  const [minutes, setMinutes] = useState(0)
+  const [seconds, setSeconds] = useState(0)
+
+  useInterval(() => {
+    const interval = setInterval(() => {
+      const now = new Date().getTime()
+      const distance = countDownDate - now
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      )
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+      setDays(days)
+      setHours(hours)
+      setMinutes(minutes)
+      setSeconds(seconds)
+    })
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, 1000)
+
   return (
     <div className="ttm-row bg-img1 ttm-bg">
       <div className="container">
         <div className="row">
-          <div className="col-md-4 rtl-right flex items-center">
+          <div className="col-md-4 rtl-right flex items-center justify-center">
             <div className="message flex items-center">
-              <div className="message-icon">
-                <FontAwesomeIcon icon={faHeart} />
-              </div>
-              <div className="message-text flex-1">
-                NOS VEMOS EN
-                <br />
-                <span>#YOLE&amp;SEBAS</span>
-                <br />
-                MATRIMONIO
+              <div className="message-text text-center">
+                <div className="message-title featured-title text-black">
+                  FALTAN
+                </div>
+                <div className="featured-desc">
+                  &#40;
+                  <span className="message-icon">
+                    <FontAwesomeIcon icon={faHeart} />
+                  </span>
+                  YOLE&amp;SEBAS&#41;
+                </div>
+                <div className="message-title featured-title text-black">
+                  PARA EL MATRI!
+                </div>
               </div>
             </div>
           </div>
@@ -24,25 +82,25 @@ export default function Countdown(): JSX.Element {
             <div className="row countdown">
               <div className="col-md-3">
                 <div className="circle">
-                  <span className="number">00</span>
+                  <span className="number">{twoDigits(days)}</span>
                   <p className="label">days</p>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="circle">
-                  <span className="number">00</span>
+                  <span className="number">{twoDigits(hours)}</span>
                   <p className="label">hours</p>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="circle">
-                  <span className="number">00</span>
+                  <span className="number">{twoDigits(minutes)}</span>
                   <p className="label">minutes</p>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="circle">
-                  <span className="number">00</span>
+                  <span className="number">{twoDigits(seconds)}</span>
                   <p className="label">seconds</p>
                 </div>
               </div>
@@ -53,10 +111,10 @@ export default function Countdown(): JSX.Element {
       <style jsx>{`
         .circle {
           border-radius: 50%;
-          border: 1px solid rgb(199, 134, 101);
+          border: 3px solid rgb(199, 134, 101);
           height: 125px;
           margin: auto;
-          padding: 40px 0 0 0;
+          padding: 30px 0 0 0;
           text-align: center;
           width: 125px;
 
@@ -77,9 +135,15 @@ export default function Countdown(): JSX.Element {
         }
 
         .message-icon {
-          width: 60px;
-          padding: 5px 10px;
-          font-size: 30px;
+          padding: 5px;
+          font-size: 16px;
+          color: #c78665;
+        }
+
+        .message-title {
+          color: #272727;
+          font-family: Cormorant;
+          font-size: 25px;
         }
       `}</style>
     </div>
