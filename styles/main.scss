@@ -3545,3 +3545,12 @@ section.error-404 .page-content p {
   filter: blur(6px);
   background-size: contain;
 }
+
+.image-column .image-zoom {
+  transition: transform 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.5) rotate(10deg);
+  }
+}

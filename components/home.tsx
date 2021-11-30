@@ -7,6 +7,7 @@ import Plans from './plans'
 import Footer from './footer'
 import Jumbotron from './jumbotron'
 import Countdown from './countdown'
+import Gallery from './gallery'
 
 export default function Home(): JSX.Element {
   return (
@@ -15,6 +16,7 @@ export default function Home(): JSX.Element {
       <Jumbotron />
       <Countdown />
       <Cards />
+      <Gallery />
       <Services />
       <SaveTheDate />
       <Plans />
