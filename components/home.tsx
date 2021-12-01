@@ -8,6 +8,8 @@ import Footer from './footer'
 import Jumbotron from './jumbotron'
 import Countdown from './countdown'
 import Gallery from './gallery'
+import Video from './video'
+import Event from './event'
 
 export default function Home(): JSX.Element {
   return (
@@ -16,6 +18,8 @@ export default function Home(): JSX.Element {
       <Jumbotron />
       <Countdown />
       <Gallery />
+      <Video />
+      <Event />
       {/* <Cards />
       <Services />
       <SaveTheDate />

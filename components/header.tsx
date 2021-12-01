@@ -67,8 +67,27 @@ export default function Header(): JSX.Element {
                     </a>
                   </li>
                   <li className="mega-menu-item">
-                    <a href="#" className="mega-menu-link">
-                      Preparacion
+                    <a
+                      href="#"
+                      className="mega-menu-link"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        navigateTo('#video')
+                      }}
+                    >
+                      Video
+                    </a>
+                  </li>
+                  <li className="mega-menu-item">
+                    <a
+                      href="#"
+                      className="mega-menu-link"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        navigateTo('#evento')
+                      }}
+                    >
+                      El evento
                     </a>
                   </li>
                   {/* <li className="mega-menu-item">
