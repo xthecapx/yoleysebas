@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import firebase from '../firebase/clientApp'
-import mainImage from '../public/images/proposal/proposal9.jpeg'
+import mainImage from '../public/images/proposal/proposal4.jpeg'
 import useBreakpoint from '../hooks/useBreakpoint'
 import clsx from 'clsx'
 
@@ -27,7 +27,7 @@ export default function Login(): JSX.Element {
 
   return (
     <>
-      <div className="w-full h-screen md:-mx-4 login-bg" />
+      <div className="w-full h-screen login-bg" />
       <div
         className={clsx('absolute bg-white', {
           'w-3/5': !isMobile,

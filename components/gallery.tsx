@@ -15,7 +15,7 @@ function importAll(r) {
 }
 
 const i = importAll(
-  require.context('../public/images/proposal/', false, /\.(png|jpe?g|svg)$/)
+  require.context('../public/images/fotos/', false, /\.(png|jpe?g|svg)$/)
 )
 const perChunk = Math.floor(i.length / 4) // items per chunk
 

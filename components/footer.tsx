@@ -1,6 +1,6 @@
 export default function Footer(): JSX.Element {
   return (
-    <footer className="footer widget-footer clearfix">
+    <footer className="footer widget-footer ttm-bgcolor-grey">
       <div className="first-footer">
         <div className="container max-w-screen-lg md:mx-auto">
           <div className="row">

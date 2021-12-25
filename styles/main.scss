@@ -2518,7 +2518,7 @@ nav.main-menu ul.menu ul.mega-submenu li:hover > a:before {
     Footer
 ------------------------*/
 .footer {
-  background-image: url('/images/footer-bg.jpg');
+  // background-image: url('/images/footer-bg.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3545,9 +3545,10 @@ section.error-404 .page-content p {
 }
 
 .login-bg {
-  background-image: url('/images/proposal/proposal11.jpeg');
+  background: url('/images/proposal/proposal7.jpeg') no-repeat center center
+    fixed;
   filter: blur(6px);
-  background-size: contain;
+  background-size: cover;
 }
 
 .image-column .image-zoom {

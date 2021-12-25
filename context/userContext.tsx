@@ -7,7 +7,7 @@ import {
   ReactChild,
 } from 'react'
 import { useRouter } from 'next/router'
-import firebase from '../firebase/clientApp'
+import firebase, { db } from '../firebase/clientApp'
 
 export const UserContext = createContext(null)
 
@@ -25,11 +25,14 @@ export default function UserContextComp({
     const unsubscriber = firebase.auth().onAuthStateChanged(async (user) => {
       try {
         if (user) {
+          const ref = await db.collection('guests').doc(user.email).get()
+          const guest = ref.data()
           // User is signed in.
-          const { uid, displayName, email, photoURL } = user
+          const { allergies, confirmed, email, invites, name, vaccinated } =
+            guest
           // You could also look for the user doc in your Firestore (if you have one):
           // const userDoc = await firebase.firestore().doc(`users/${uid}`).get()
-          setUser({ uid, displayName, email, photoURL })
+          setUser({ allergies, confirmed, email, invites, name, vaccinated })
           router.push('/')
         } else {
           setUser(null)
@@ -54,4 +57,4 @@ export default function UserContextComp({
 }
 
 // Custom hook that shorthands the context!
-export const useUser = (): JSX.Element => useContext(UserContext)
+export const useUser = () => useContext(UserContext)

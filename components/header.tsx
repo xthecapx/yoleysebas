@@ -30,6 +30,30 @@ export default function Header(): JSX.Element {
     })
   }
 
+  // const createUsers = async () => {
+  //   for (let i = 0; i < guests.length; i++) {
+  //     const d = guests[i]
+
+  //     await db
+  //       .collection('guests')
+  //       .doc(d.email)
+  //       .set({
+  //         name: d.name,
+  //         email: d.email,
+  //         allergies: '',
+  //         confirmed: 0,
+  //         invites: d.guests,
+  //         vaccinated: false,
+  //       })
+  //       .then(() => {
+  //         console.log('Document successfully written!', i)
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error writing document: ', error)
+  //       })
+  //   }
+  // }
+
   return (
     <header className="header ttm-header-style-01">
       <div id="site-header-menu" className="site-header-menu ttm-bgcolor-white">
@@ -49,6 +73,15 @@ export default function Header(): JSX.Element {
 
               <nav className="main-menu menu-mobile ml-auto" id="menu">
                 <ul className="menu">
+                  {/* <li className="mega-menu-item active">
+                    <a
+                      href="#"
+                      className="mega-menu-link"
+                      onClick={createUsers}
+                    >
+                      Create User
+                    </a>
+                  </li> */}
                   <li className="mega-menu-item active">
                     <a href="#" className="mega-menu-link" onClick={logout}>
                       Logout
