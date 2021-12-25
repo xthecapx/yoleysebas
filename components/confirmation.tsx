@@ -7,6 +7,7 @@ import Image from 'next/image'
 import saveTheDate from '../public/images/savethedate.jpeg'
 
 export default function Confirmation({ user }): JSX.Element {
+  // eslint-disable-next-line no-console
   const onSubmit = (data) => console.log(data)
   const {
     register,
