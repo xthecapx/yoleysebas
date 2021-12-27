@@ -1,37 +1,16 @@
 import { useState } from 'react'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import Slider from './slider'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import IconButton from '@mui/material/IconButton'
 import Close from '@mui/icons-material/Close'
 import { useTheme } from '@mui/material/styles'
+import { IMAGES } from './Images'
 
-function importAll(r) {
-  return r.keys().map(r)
-}
-
-const i = importAll(
-  require.context('../public/images/fotos/', false, /\.(png|jpe?g|svg)$/)
-)
-const perChunk = Math.floor(i.length / 4) // items per chunk
-
-const imagesChunks = i.reduce((resultArray, item, index) => {
-  const chunkIndex = Math.floor(index / perChunk)
-
-  if (!resultArray[chunkIndex]) {
-    resultArray[chunkIndex] = [] // start a new chunk
-  }
-
-  resultArray[chunkIndex].push(item)
-
-  return resultArray
-}, [])
-
-const lengths = imagesChunks.map((chunk) => chunk.length)
+const lengths = IMAGES.map((chunk) => chunk.length)
 
 export default function Gallery(): JSX.Element {
   const [open, setOpen] = useState(false)
@@ -48,16 +27,17 @@ export default function Gallery(): JSX.Element {
 
     return acc + length
   }, 0)
+
   const index = prev + selected.row
 
   return (
     <div className="gallery" id="gallery">
       <div className="container">
         <div className="image-row">
-          {imagesChunks.map((chunk, column) => (
+          {IMAGES.map((chunk, column) => (
             <div key={column} className="image-column">
               {chunk.map((image, row) => (
-                <Image
+                <NextImage
                   key={row}
                   src={image}
                   alt="Main Image"
@@ -91,9 +71,7 @@ export default function Gallery(): JSX.Element {
           </IconButton>
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            <Slider images={i} index={index} />
-          </DialogContentText>
+          <Slider images={IMAGES.flat()} index={index} />
         </DialogContent>
       </Dialog>
       <style jsx>{`

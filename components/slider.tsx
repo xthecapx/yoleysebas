@@ -12,7 +12,7 @@ export default function Slider({
   images,
   index,
 }: {
-  images: string[]
+  images: StaticImageData[]
   index: number
 }): JSX.Element {
   return (

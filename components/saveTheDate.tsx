@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import SaveTheDateImage from '../public/images/proposal/proposal6.jpeg'
+import SaveTheDateImage from '../public/images/fotos/proposal6.jpeg'
 
 export default function SaveTheDate(): JSX.Element {
   return (

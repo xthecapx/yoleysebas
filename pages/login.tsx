@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import firebase from '../firebase/clientApp'
-import mainImage from '../public/images/proposal/proposal4.jpeg'
+import mainImage from '../public/images/fotos/proposal4.jpeg'
 import useBreakpoint from '../hooks/useBreakpoint'
 import clsx from 'clsx'
 
@@ -87,7 +87,7 @@ export default function Login(): JSX.Element {
               className="bg-yellow-400 text-xs text-gray-700 rounded px-4 py-2"
               onClick={() => login(email)}
             >
-              SIGN IN
+              Entrar
             </button>
           </div>
         </div>

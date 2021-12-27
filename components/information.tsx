@@ -7,29 +7,24 @@ import StepContent from '@mui/material/StepContent'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
+import StepOne from './StepOne'
 
 const steps = [
   {
     label: 'Ceremonia y recepción',
-    description: `<div className="featured-desc">
-                  <p>Sábado, 30 Abril, 2022</p>
-                  <p>4:30 PM – 2:00 AM</p>
-                  <p>Ipuana Virgin Beach</p>
-                  <p>Mayapo, La Guajira</p>
-                  <p>+57 300 268 6222</p>
-                </div>`,
+    description: StepOne,
   },
   {
     label: 'Codigo de vestimenta',
-    description: `blanco y rojo`,
+    description: StepOne,
   },
   {
     label: 'Como llegar',
-    description: 'Mayapo!!!',
+    description: StepOne,
   },
   {
     label: 'Donde hospedarse',
-    description: `Oferta de hoteles!.`,
+    description: StepOne,
   },
 ]
 
@@ -49,7 +44,7 @@ export default function Information(): JSX.Element {
   }
 
   return (
-    <Box>
+    <div className="container">
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label}>
@@ -63,7 +58,7 @@ export default function Information(): JSX.Element {
               {step.label}
             </StepLabel>
             <StepContent>
-              <Typography>{step.description}</Typography>
+              <step.description />
               <Box sx={{ mb: 2 }}>
                 <div>
                   <Button
@@ -94,6 +89,6 @@ export default function Information(): JSX.Element {
           </Button>
         </Paper>
       )}
-    </Box>
+    </div>
   )
 }
