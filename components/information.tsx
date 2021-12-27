@@ -8,6 +8,7 @@ import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import StepOne from './StepOne'
+import StepTwo from './StepTwo'
 
 const steps = [
   {
@@ -16,15 +17,15 @@ const steps = [
   },
   {
     label: 'Codigo de vestimenta',
-    description: StepOne,
+    description: StepTwo,
   },
   {
     label: 'Como llegar',
-    description: StepOne,
+    description: StepTwo,
   },
   {
     label: 'Donde hospedarse',
-    description: StepOne,
+    description: StepTwo,
   },
 ]
 
