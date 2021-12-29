@@ -1,8 +1,10 @@
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 import firebase from '../firebase/clientApp'
+import Close from '@mui/icons-material/Logout'
+import IconButton from '@mui/material/IconButton'
 
-export default function Header(): JSX.Element {
+export default function Header({ user }): JSX.Element {
   const [
     isScrollValueMoreThanHeaderHeight,
     setIsScrollValueMoreThanHeaderHeight,
@@ -62,15 +64,14 @@ export default function Header(): JSX.Element {
             'fixed-header': isScrollValueMoreThanHeaderHeight,
           })}
         >
-          <div className="container max-w-screen-lg md:mx-auto">
+          <div className="container">
             <div className="site-navigation d-flex flex-row align-items-center">
-              <div className="site-branding">#Yole&amp;Sebas</div>
+              <div className="site-branding">{`Bienvenido ${user.name}`}</div>
               <div className="btn-show-menu-mobile menubar menubar--squeeze">
                 <span className="menubar-box">
                   <span className="menubar-inner"></span>
                 </span>
               </div>
-
               <nav className="main-menu menu-mobile ml-auto" id="menu">
                 <ul className="menu">
                   {/* <li className="mega-menu-item active">
@@ -82,11 +83,6 @@ export default function Header(): JSX.Element {
                       Create User
                     </a>
                   </li> */}
-                  <li className="mega-menu-item active">
-                    <a href="#" className="mega-menu-link" onClick={logout}>
-                      Logout
-                    </a>
-                  </li>
                   <li className="mega-menu-item">
                     <a
                       href="#"
@@ -96,7 +92,7 @@ export default function Header(): JSX.Element {
                         navigateTo('#gallery')
                       }}
                     >
-                      La pedida de mano
+                      Fotos
                     </a>
                   </li>
                   <li className="mega-menu-item">
@@ -120,29 +116,33 @@ export default function Header(): JSX.Element {
                         navigateTo('#evento')
                       }}
                     >
-                      El evento
-                    </a>
-                  </li>
-                  {/* <li className="mega-menu-item">
-                    <a href="#" className="mega-menu-link">
-                      Save the date
+                      Guia del evento
                     </a>
                   </li>
                   <li className="mega-menu-item">
-                    <a href="#" className="mega-menu-link">
-                      Confirma
+                    <a
+                      href="#"
+                      className="mega-menu-link"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        navigateTo('#confirmation')
+                      }}
+                    >
+                      Confirma tu asistencia!
                     </a>
-                  </li>
-                  <li className="mega-menu-item">
-                    <a href="#" className="mega-menu-link">
-                      Contacto
-                    </a>
-                  </li> */}
-                  <li>
-                    <a href="contact-us.html">Contact Us</a>
                   </li>
                 </ul>
               </nav>
+              <div className="header_extra d-flex flex-row align-items-center justify-content-end ">
+                <IconButton
+                  color="primary"
+                  aria-label="lougout"
+                  component="span"
+                  onClick={logout}
+                >
+                  <Close />
+                </IconButton>
+              </div>
             </div>
           </div>
         </div>

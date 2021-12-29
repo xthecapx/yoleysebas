@@ -9,23 +9,25 @@ import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import StepOne from './StepOne'
 import StepTwo from './StepTwo'
+import StepThree from './StepThree'
+import StepFour from './StepFour'
 
 const steps = [
   {
-    label: 'Ceremonia y recepción',
+    label: '¿Dónde será el evento y la recepción?',
     description: StepOne,
   },
   {
-    label: 'Codigo de vestimenta',
+    label: '¿Cómo llegar?',
     description: StepTwo,
   },
   {
-    label: 'Como llegar',
-    description: StepTwo,
+    label: '¿Dónde hospedarme?',
+    description: StepThree,
   },
   {
-    label: 'Donde hospedarse',
-    description: StepTwo,
+    label: '¿Cúal es el código de vestimenta?',
+    description: StepFour,
   },
 ]
 
@@ -45,14 +47,15 @@ export default function Information(): JSX.Element {
   }
 
   return (
-    <div className="container">
+    <div className="container" id="evento">
+      <h1>Tutorial del evento</h1>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label}>
             <StepLabel
               optional={
                 index === 3 ? (
-                  <Typography variant="caption">Last step</Typography>
+                  <Typography variant="caption">Ultimo paso!</Typography>
                 ) : null
               }
             >
@@ -67,14 +70,16 @@ export default function Information(): JSX.Element {
                     onClick={handleNext}
                     sx={{ mt: 1, mr: 1 }}
                   >
-                    {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                    {index === steps.length - 1
+                      ? 'Finalizar'
+                      : 'Siguiente paso'}
                   </Button>
                   <Button
                     disabled={index === 0}
                     onClick={handleBack}
                     sx={{ mt: 1, mr: 1 }}
                   >
-                    Back
+                    Paso anterior
                   </Button>
                 </div>
               </Box>
@@ -84,9 +89,11 @@ export default function Information(): JSX.Element {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Typography>
+            {'Ya estas listo para la fiesta, nos vemo en Mayapo!'}
+          </Typography>
           <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
+            Reiniciar tutorial
           </Button>
         </Paper>
       )}

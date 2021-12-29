@@ -83,25 +83,25 @@ export default function Countdown(): JSX.Element {
               <div className="col-md-3">
                 <div className="circle">
                   <span className="number">{twoDigits(days)}</span>
-                  <p className="label">days</p>
+                  <p className="label">días</p>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="circle">
                   <span className="number">{twoDigits(hours)}</span>
-                  <p className="label">hours</p>
+                  <p className="label">horas</p>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="circle">
                   <span className="number">{twoDigits(minutes)}</span>
-                  <p className="label">minutes</p>
+                  <p className="label">minutos</p>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="circle">
                   <span className="number">{twoDigits(seconds)}</span>
-                  <p className="label">seconds</p>
+                  <p className="label">segundos</p>
                 </div>
               </div>
             </div>

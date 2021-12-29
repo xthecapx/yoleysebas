@@ -12,7 +12,7 @@ export default function Footer(): JSX.Element {
                     <div className="featured-box text-center">
                       <div className="featured-content">
                         <div className="featured-title">
-                          <h5>Our Address</h5>
+                          <h5>Dirección</h5>
                         </div>
                         <div className="featured-desc">
                           <p>Evanto HQ 24 Fifth st., Los Angeles, USA</p>
@@ -24,10 +24,10 @@ export default function Footer(): JSX.Element {
                     <div className="featured-box text-center">
                       <div className="featured-content">
                         <div className="featured-title">
-                          <h5>Talk To Expert</h5>
+                          <h5>Hecho por</h5>
                         </div>
                         <div className="featured-desc">
-                          <p>+1234 567 8910 or +1234 567 8911</p>
+                          <p>xthecapx@gmail.com</p>
                         </div>
                       </div>
                     </div>
@@ -36,7 +36,7 @@ export default function Footer(): JSX.Element {
                     <div className="featured-box text-center">
                       <div className="featured-content">
                         <div className="featured-title">
-                          <h5>Email Us</h5>
+                          <h5>Habla con</h5>
                         </div>
                         <div className="featured-desc">
                           <p>example@yourdomain.com</p>

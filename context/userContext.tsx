@@ -17,6 +17,7 @@ export default function UserContextComp({
   children: ReactChild | ReactChildren
 }): JSX.Element {
   const [user, setUser] = useState(null)
+  const [open, setOpen] = useState(false)
   const router = useRouter()
   const [loadingUser, setLoadingUser] = useState(true) // Helpful, to update the UI accordingly.
 
@@ -27,12 +28,10 @@ export default function UserContextComp({
         if (user) {
           const ref = await db.collection('guests').doc(user.email).get()
           const guest = ref.data()
-          // User is signed in.
-          const { allergies, confirmed, email, invites, name, vaccinated } =
-            guest
+
           // You could also look for the user doc in your Firestore (if you have one):
           // const userDoc = await firebase.firestore().doc(`users/${uid}`).get()
-          setUser({ allergies, confirmed, email, invites, name, vaccinated })
+          setUser({ ...guest })
           router.push('/')
         } else {
           setUser(null)
@@ -50,7 +49,24 @@ export default function UserContextComp({
   }, [])
 
   return (
-    <UserContext.Provider value={{ user, setUser, loadingUser }}>
+    <UserContext.Provider
+      value={{
+        user,
+        setUser,
+        loadingUser,
+        open,
+        openSnackbar: () => {
+          setOpen(true)
+        },
+        closeSnackbar: (_, reason) => {
+          if (reason === 'clickaway') {
+            return
+          }
+
+          setOpen(false)
+        },
+      }}
+    >
       {children}
     </UserContext.Provider>
   )

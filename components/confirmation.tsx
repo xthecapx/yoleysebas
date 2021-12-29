@@ -1,29 +1,43 @@
-import { useForm } from 'react-hook-form'
+import { useEffect } from 'react'
+import { useForm, Controller } from 'react-hook-form'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
 import Image from 'next/image'
 import saveTheDate from '../public/images/savethedate.jpeg'
+import { db } from '../firebase/clientApp'
 
-export default function Confirmation({ user }): JSX.Element {
-  // eslint-disable-next-line no-console
-  const onSubmit = (data) => console.log(data)
-  const {
-    register,
-    handleSubmit,
-    // formState: {  },
-  } = useForm({
+type ConfirmationProps = {
+  user: any
+  openSnackbar: () => void
+}
+
+export default function Confirmation({
+  user,
+  openSnackbar,
+}: ConfirmationProps): JSX.Element {
+  const onSubmit = async (data) => {
+    const ref = db.collection('guests').doc(user.email)
+    await ref.update({
+      confirmed: data.confirmed,
+      allergies: data.allergies,
+      vaccinated: data.vaccinated,
+      attend: data.attend,
+    })
+    openSnackbar()
+  }
+  const { register, handleSubmit, control } = useForm({
     defaultValues: {
       allergies: user.allergies,
-      confirmed: user.confirmed,
+      confirmed: user.confirmed || user.invites,
       vaccinated: user.vaccinated,
-      attend: false,
+      attend: user.attend,
     },
   })
 
   return (
-    <section className="ttm-row bg-img1 ttm-bg">
+    <section className="ttm-row bg-img1 ttm-bg" id="confirmation">
       <div className="container">
         <div className="row">
           <div className="col-lg-5">
@@ -41,7 +55,7 @@ export default function Confirmation({ user }): JSX.Element {
               <div className="layer-content">
                 <div className="section-title text-center">
                   <div className="title-header">
-                    <h2>{user.name}</h2>
+                    {/* <h2>{user.name}</h2> */}
                     <h2 className="title">Nos acompañaras en la boda?</h2>
                   </div>
                 </div>
@@ -50,44 +64,74 @@ export default function Confirmation({ user }): JSX.Element {
                   className="request_form wrap-form clearfix"
                   onSubmit={handleSubmit(onSubmit)}
                 >
-                  <div className="row">
+                  <div className="row mb-3">
                     <div className="col-lg-12">
                       <FormGroup>
-                        <FormControlLabel
-                          control={<Switch {...register('attend')} />}
-                          label="Confirmo que estoy disponible para la boda"
+                        <Controller
+                          render={({ field }) => (
+                            <FormControlLabel
+                              value="attend"
+                              control={
+                                <Switch
+                                  checked={field.value}
+                                  onChange={field.onChange}
+                                  onBlur={field.onBlur}
+                                  ref={field.ref}
+                                />
+                              }
+                              label="Confirmo que estoy disponible para la boda"
+                            />
+                          )}
+                          control={control}
+                          name="attend"
                         />
                       </FormGroup>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-lg-12">
-                      <label>
-                        <span className="text-input">
-                          <input
-                            type="number"
-                            step="1"
-                            min="1"
-                            max="2"
-                            name="confirmed"
-                            placeholder="Invitados"
-                            {...register('confirmed')}
-                          />
-                        </span>
-                      </label>
+                  {user.invites > 1 && (
+                    <div className="row">
+                      <div className="col-lg-12">
+                        <label>
+                          <span className="text-input">
+                            <input
+                              type="number"
+                              step="1"
+                              min="1"
+                              max={user.invites}
+                              name="confirmed"
+                              placeholder="Invitados"
+                              {...register('confirmed')}
+                            />
+                          </span>
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                  <div className="row">
+                  )}
+                  <div className="row mb-3">
                     <div className="col-lg-12">
                       <FormGroup>
-                        <FormControlLabel
-                          control={<Switch {...register('vaccinated')} />}
-                          label="Estoy vacunado"
+                        <Controller
+                          render={({ field }) => (
+                            <FormControlLabel
+                              value="vaccinated"
+                              control={
+                                <Switch
+                                  checked={field.value}
+                                  onChange={field.onChange}
+                                  onBlur={field.onBlur}
+                                  ref={field.ref}
+                                />
+                              }
+                              label="Estoy vacunado"
+                            />
+                          )}
+                          control={control}
+                          name="vaccinated"
                         />
                       </FormGroup>
                     </div>
                   </div>
-                  <div className="row">
+                  <div className="row mb-3">
                     <div className="col-lg-12">
                       <TextareaAutosize
                         maxRows={5}
