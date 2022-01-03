@@ -2,8 +2,8 @@ import Grid from '@mui/material/Grid'
 import Image from 'next/image'
 import men from '../public/images/proposal/men.jpg'
 import men2 from '../public/images/proposal/men2.jpg'
-import women from '../public/images/proposal/women.jpg'
-import women2 from '../public/images/proposal/women2.jpg'
+import women from '../public/images/proposal/w.jpg'
+import women2 from '../public/images/proposal/w2.jpg'
 
 export default function StepFour(): JSX.Element {
   return (
