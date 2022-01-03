@@ -14,16 +14,16 @@ import StepFour from './StepFour'
 
 const steps = [
   {
-    label: '¿Dónde será el evento y la recepción?',
+    label: '¿Dónde será la ceremonia y recepción?',
     description: StepOne,
-  },
-  {
-    label: '¿Cómo llegar?',
-    description: StepTwo,
   },
   {
     label: '¿Dónde hospedarme?',
     description: StepThree,
+  },
+  {
+    label: '¿Cómo llegar?',
+    description: StepTwo,
   },
   {
     label: '¿Cúal es el código de vestimenta?',
@@ -47,19 +47,12 @@ export default function Information(): JSX.Element {
   }
 
   return (
-    <div className="container" id="evento">
-      <h1>Tutorial del evento</h1>
+    <div className="container py-10" id="evento">
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
-          <Step key={step.label}>
-            <StepLabel
-              optional={
-                index === 3 ? (
-                  <Typography variant="caption">Ultimo paso!</Typography>
-                ) : null
-              }
-            >
-              {step.label}
+          <Step key={step.label} className="step-circle">
+            <StepLabel>
+              <h5 className="step-title">{step.label}</h5>
             </StepLabel>
             <StepContent>
               <step.description />
@@ -69,6 +62,7 @@ export default function Information(): JSX.Element {
                     variant="contained"
                     onClick={handleNext}
                     sx={{ mt: 1, mr: 1 }}
+                    className="text-white"
                   >
                     {index === steps.length - 1
                       ? 'Finalizar'
@@ -90,7 +84,7 @@ export default function Information(): JSX.Element {
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
           <Typography>
-            {'Ya estas listo para la fiesta, nos vemo en Mayapo!'}
+            {'Ya estás listo para la fiesta, nos vemos en Mayapo!'}
           </Typography>
           <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
             Reiniciar tutorial

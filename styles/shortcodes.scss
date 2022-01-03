@@ -399,6 +399,15 @@
 /* ===============================================
     6.Section-Title  
 ------------------------*/
+.step-title {
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Hind', sans-serif;
+  color: #c78665;
+}
+.step-circle .Mui-active text {
+  fill: white;
+}
 .section-title {
   position: relative;
   margin-bottom: 20px;
@@ -414,7 +423,6 @@
 }
 .section-title h2.title {
   font-weight: 700;
-  text-transform: capitalize;
   font-size: 41px;
   line-height: 52px;
   margin-bottom: 1px;

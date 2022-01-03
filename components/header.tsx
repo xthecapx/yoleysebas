@@ -9,6 +9,7 @@ export default function Header({ user }): JSX.Element {
     isScrollValueMoreThanHeaderHeight,
     setIsScrollValueMoreThanHeaderHeight,
   ] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,13 +67,29 @@ export default function Header({ user }): JSX.Element {
         >
           <div className="container">
             <div className="site-navigation d-flex flex-row align-items-center">
-              <div className="site-branding">{`Bienvenido ${user.name}`}</div>
-              <div className="btn-show-menu-mobile menubar menubar--squeeze">
+              <div className="site-branding">
+                <span>{`Bienvenido, `}</span>
+                <strong>{user.name}</strong>
+              </div>
+              <div
+                className={clsx(
+                  'btn-show-menu-mobile menubar menubar--squeeze',
+                  {
+                    'is-active': isOpen,
+                  }
+                )}
+                onClick={() => setIsOpen(!isOpen)}
+              >
                 <span className="menubar-box">
                   <span className="menubar-inner"></span>
                 </span>
               </div>
-              <nav className="main-menu menu-mobile ml-auto" id="menu">
+              <nav
+                className={clsx('main-menu menu-mobile ml-auto', {
+                  show: isOpen,
+                })}
+                id="menu"
+              >
                 <ul className="menu">
                   {/* <li className="mega-menu-item active">
                     <a

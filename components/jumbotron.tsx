@@ -15,7 +15,6 @@ export default function Jumbotron(): JSX.Element {
       </div>
       <div className="absolute top-0 left-0 message flex content-center items-center">
         <div className="text-center flex-1">
-          <p className="text hideme">Save the date</p>
           <h2 className="name">Yole</h2>
           <h5 className="separator">&amp;</h5>
           <h2 className="name">Sebas</h2>

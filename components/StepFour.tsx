@@ -8,51 +8,89 @@ import women2 from '../public/images/proposal/women2.jpg'
 export default function StepFour(): JSX.Element {
   return (
     <div className="relative">
-      <Grid container spacing={3}>
-        <Grid item xs={6} className="text-center">
-          <Grid container spacing={5}>
-            <Grid item xs={12}>{`Guayabera blanca manga larga`}</Grid>
-            <Grid item xs={6}>
+      <Grid container spacing={5}>
+        <Grid item xs={12} md={6} className="text-center">
+          <Grid container>
+            <Grid item xs={12}>
+              <h5 className="step-title mx-0">{`Ellos:`}</h5>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              className="mb-3"
+            >{`Guayabera blanca manga larga`}</Grid>
+            <Grid
+              item
+              xs={6}
+              maxHeight={350}
+              height={350}
+              className="overflow-hidden relative"
+            >
               <Image
                 src={men}
                 alt="Hombre 1"
                 placeholder="blur"
                 quality="90"
-                layout="responsive"
+                layout="fill"
+                objectFit="cover"
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid
+              item
+              xs={6}
+              maxHeight={350}
+              height={350}
+              className="overflow-hidden relative"
+            >
               <Image
                 src={men2}
                 alt="Hombre 2"
                 placeholder="blur"
                 quality="90"
-                layout="responsive"
+                layout="fill"
+                objectFit="cover"
               />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6} className="text-center">
-          <Grid container spacing={5}>
+        <Grid item xs={12} md={6} className="text-center">
+          <Grid container>
             <Grid item xs={12}>
+              <h5 className="step-title mx-0">{`Ellas:`}</h5>
+            </Grid>
+            <Grid item xs={12} className="mb-3">
               {`Vestido largo tropical (Blanco reservado)`}
             </Grid>
-            <Grid item xs={6}>
+            <Grid
+              item
+              xs={6}
+              maxHeight={350}
+              height={350}
+              className="overflow-hidden relative"
+            >
               <Image
                 src={women}
                 alt="Mujer 1"
                 placeholder="blur"
                 quality="90"
-                layout="responsive"
+                layout="fill"
+                objectFit="contain"
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid
+              item
+              xs={6}
+              maxHeight={350}
+              height={350}
+              className="overflow-hidden relative"
+            >
               <Image
                 src={women2}
                 alt="Mujer 2"
                 placeholder="blur"
                 quality="90"
-                layout="responsive"
+                layout="fill"
+                objectFit="cover"
               />
             </Grid>
           </Grid>

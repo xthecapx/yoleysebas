@@ -316,16 +316,16 @@ ul.menu-col li a:focus {
     background-color: transparent;
     color: inherit;
   }
-  nav.main-menu li.mega-menu-item a.mega-menu-link:after {
-    font-family: 'FontAwesome';
-    content: '\f105';
-    float: right;
-    font-size: 16px;
-    margin-left: 10px;
-  }
-  nav.main-menu li.mega-menu-item.on > a.mega-menu-link:after {
-    content: '\f107';
-  }
+  // nav.main-menu li.mega-menu-item a.mega-menu-link:after {
+  //   font-family: 'FontAwesome';
+  //   content: '\f105';
+  //   float: right;
+  //   font-size: 16px;
+  //   margin-left: 10px;
+  // }
+  // nav.main-menu li.mega-menu-item.on > a.mega-menu-link:after {
+  //   content: '\f107';
+  // }
   nav.main-menu ul.menu-left > li:last-child > ul.mega-submenu {
     border-bottom: solid 1px #e0e0e0;
   }

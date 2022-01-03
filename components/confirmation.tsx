@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -55,8 +54,7 @@ export default function Confirmation({
               <div className="layer-content">
                 <div className="section-title text-center">
                   <div className="title-header">
-                    {/* <h2>{user.name}</h2> */}
-                    <h2 className="title">Nos acompañaras en la boda?</h2>
+                    <h2 className="title">{`¿Nos acompañarás en la boda?`}</h2>
                   </div>
                 </div>
                 <form
@@ -91,19 +89,19 @@ export default function Confirmation({
                   {user.invites > 1 && (
                     <div className="row">
                       <div className="col-lg-12">
-                        <label>
-                          <span className="text-input">
-                            <input
-                              type="number"
-                              step="1"
-                              min="1"
-                              max={user.invites}
-                              name="confirmed"
-                              placeholder="Invitados"
-                              {...register('confirmed')}
-                            />
-                          </span>
-                        </label>
+                        <label htmlFor="confirmed">{`Número de asistentes confirmados:`}</label>
+                        <span className="text-input">
+                          <input
+                            id="confirmed"
+                            type="number"
+                            step="1"
+                            min="1"
+                            max={user.invites}
+                            name="confirmed"
+                            placeholder="Invitados"
+                            {...register('confirmed')}
+                          />
+                        </span>
                       </div>
                     </div>
                   )}
@@ -137,7 +135,7 @@ export default function Confirmation({
                         maxRows={5}
                         minRows={3}
                         aria-label="alergias"
-                        placeholder="Alguna alergia en la comida?"
+                        placeholder="¿Tienes alergias a algun alimento?"
                         {...register('allergies')}
                       />
                     </div>
