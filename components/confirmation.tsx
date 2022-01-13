@@ -107,7 +107,7 @@ export default function Confirmation({
                       <div className="col-lg-12">
                         <FormControl className="w-100 mb-3">
                           <InputLabel id="confirmed">
-                            {'¿Cuántos asistentes confirmados para la fiesta?'}
+                            {'¿Cuántos asistentes confirmados?'}
                           </InputLabel>
                           <Controller
                             render={({ field }) => (

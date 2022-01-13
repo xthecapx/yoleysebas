@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
       <Gallery />
       <Video />
       <Information />
-      {user && user.name && (
+      {user && user.name && user.invites && (
         <Confirmation user={user} openSnackbar={openSnackbar} />
       )}
       <Footer />

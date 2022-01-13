@@ -1,9 +1,9 @@
 export const guests = [
-  // {
-  //   email: 'abocarama@hotmail.com',
-  //   name: 'Carlos Masmela',
-  //   guests: 1,
-  // },
+  {
+    email: 'abocarama@hotmail.com',
+    name: 'Carlos Masmela',
+    guests: 1,
+  },
   {
     email: 'andres_alvaradog@hotmail.com',
     name: 'Andres Alvarado',
@@ -46,7 +46,7 @@ export const guests = [
   },
   {
     email: 'isabel168@hotmail.com',
-    name: 'Isabel Gomez',
+    name: 'Isabel Gómez',
     guests: 2,
   },
   {
@@ -57,7 +57,7 @@ export const guests = [
   {
     email: 'leoorjuela324@gmail.com',
     name: 'Leo Orjuela',
-    guests: 2,
+    guests: 1,
   },
   {
     email: 'camilarebolledoquijano@gmail.com',
@@ -70,8 +70,8 @@ export const guests = [
     guests: 2,
   },
   {
-    email: 'manusarmiento@gmail.com',
-    name: 'Manuel Sarmiento',
+    email: 'karolaenriquez@gmail.com',
+    name: 'Karola Enriquez',
     guests: 2,
   },
   {
@@ -128,12 +128,12 @@ export const guests = [
   },
   {
     email: 'grgarcia26@hotmail.com',
-    name: 'Gina Rosas',
+    name: 'Gina Rosa',
     guests: 2,
   },
   {
     email: 'yohanis.alvarez@hotmail.com',
-    name: 'Yohanis Alvarez',
+    name: 'Yohanis Álvarez',
     guests: 1,
   },
   {
@@ -154,6 +154,105 @@ export const guests = [
   {
     email: 'sinjulian@gmail.com',
     name: 'Julian Robledo',
+    guests: 1,
+  },
+  {
+    email: 'bsanchezpolaniamd@gmail.com',
+    name: 'Boris Sanchez',
+    guests: 1,
+  },
+  {
+    email: 'ginapaolaorjuela@gmail.com',
+    name: 'Paola Orjuela',
+    guests: 2,
+  },
+  {
+    email: 'tatiagaar21@hotmail.com',
+    name: 'Tatiana Gallo',
+    guests: 2,
+  },
+  {
+    email: 'mariadelsocoap@hotmail.com',
+    name: 'Maria del Socorro Arguello',
+    guests: 1,
+  },
+  {
+    email: 'csaavedrat1@yahoo.com',
+    name: 'Carlos Orlando Saavedra',
+    guests: 1,
+  },
+  {
+    email: 'sebsaapk@hotmail.com',
+    name: 'Sebastian Saavedra',
+    guests: 1,
+  },
+  {
+    email: 'hermilson.saavedra@hotmail.com',
+    name: 'Hermilson Saavedra',
+    guests: 2,
+  },
+  {
+    name: 'Martha Orjuela',
+    email: 'otaloramartha@gmail.com',
+    guests: 2,
+  },
+  {
+    email: 'tucelu.com@hotmail.com',
+    name: 'Martha Lopez',
+    guests: 2,
+  },
+  {
+    email: 'mfreylezuniga@gmail.com',
+    name: 'Mercedes Freyle',
+    guests: 1,
+  },
+  {
+    email: 'nayelinacosta@gmail.com',
+    name: 'Nayelin Acosta',
+    guests: 1,
+    confirmados: '-',
+  },
+  {
+    email: 'linamariatalerog@gmail.com',
+    name: 'Lina Talero',
+    guests: 1,
+    confirmados: '-',
+  },
+  {
+    email: 'yolealme@hotmail.com',
+    name: 'Yoleidis Dinora Altamar',
+    guests: 1,
+  },
+  {
+    email: 'danielag-18@gmail.com',
+    name: 'Daniela Gallo',
+    guests: 2,
+    confirmados: '-',
+  },
+  {
+    email: 'elis-orozco22@hotmail.com',
+    name: 'Elis Orozco',
+    guests: 2,
+  },
+  {
+    email: 'karlamengual94@hotmail.com',
+    name: 'Karla Mengual',
+    guests: 1,
+  },
+  {
+    email: 'hildis-05@hotmail.com',
+    name: 'Hilda Orozco',
+    guests: 1,
+  },
+  {
+    email: 'vigisselle@gmail.com',
+    name: 'Viviana García',
+    guests: 1,
+    confirmados: '-',
+  },
+  {
+    email: 'invitadosyoleysebas',
+    name: 'Invitado',
     guests: 1,
   },
 ]

@@ -1,8 +1,10 @@
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
+// import firebase, { db } from '../firebase/clientApp'
 import firebase from '../firebase/clientApp'
 import Close from '@mui/icons-material/Logout'
 import IconButton from '@mui/material/IconButton'
+// import { guests } from './guests'
 
 export default function Header({ user }): JSX.Element {
   const [
