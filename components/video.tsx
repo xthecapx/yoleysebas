@@ -1,6 +1,8 @@
 export default function Video(): JSX.Element {
   return (
     <div className="video bg-img1 ttm-bg py-10 container" id="video">
+      <h5 className="sec-subtitle">VIDEO PROPOSAL</h5>
+      <h2 className="sec-title">Resumen mágico</h2>
       <div className="aspect-w-16 aspect-h-9 container">
         <iframe
           id="player"

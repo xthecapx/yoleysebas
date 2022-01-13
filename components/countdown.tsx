@@ -63,17 +63,10 @@ export default function Countdown(): JSX.Element {
             <div className="message flex items-center">
               <div className="message-text text-center">
                 <div className="message-title featured-title text-black">
-                  FALTAN
-                </div>
-                <div className="featured-desc">
-                  &#40;
-                  <span className="message-icon">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </span>
-                  YOLE&amp;SEBAS&#41;
+                  PARA EL GRAN DÍA
                 </div>
                 <div className="message-title featured-title text-black">
-                  PARA EL MATRI!
+                  FALTAN:
                 </div>
               </div>
             </div>

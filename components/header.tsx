@@ -109,7 +109,7 @@ export default function Header({ user }): JSX.Element {
                         navigateTo('#gallery')
                       }}
                     >
-                      Fotos
+                      Fotos compromiso
                     </a>
                   </li>
                   <li className="mega-menu-item">
@@ -121,7 +121,7 @@ export default function Header({ user }): JSX.Element {
                         navigateTo('#video')
                       }}
                     >
-                      Video
+                      Video proposal
                     </a>
                   </li>
                   <li className="mega-menu-item">
@@ -133,7 +133,7 @@ export default function Header({ user }): JSX.Element {
                         navigateTo('#evento')
                       }}
                     >
-                      Guia del evento
+                      Guía del evento
                     </a>
                   </li>
                   <li className="mega-menu-item">
@@ -145,7 +145,7 @@ export default function Header({ user }): JSX.Element {
                         navigateTo('#confirmation')
                       }}
                     >
-                      Confirma tu asistencia!
+                      ¡Confirma tu asistencia!
                     </a>
                   </li>
                 </ul>

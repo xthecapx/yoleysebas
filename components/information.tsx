@@ -11,6 +11,7 @@ import StepOne from './StepOne'
 import StepTwo from './StepTwo'
 import StepThree from './StepThree'
 import StepFour from './StepFour'
+import StepFive from './StepFive'
 
 const steps = [
   {
@@ -28,6 +29,10 @@ const steps = [
   {
     label: '¿Cúal es el código de vestimenta?',
     description: StepFour,
+  },
+  {
+    label: 'Lluvia de sobres',
+    description: StepFive,
   },
 ]
 
@@ -48,11 +53,12 @@ export default function Information(): JSX.Element {
 
   return (
     <div className="container py-10" id="evento">
+      <h5 className="sec-subtitle">GUÍA DEL EVENTO</h5>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label} className="step-circle">
             <StepLabel>
-              <h5 className="step-title">{step.label}</h5>
+              <h5 className="sec-title m-0">{step.label}</h5>
             </StepLabel>
             <StepContent>
               <step.description />
@@ -84,7 +90,7 @@ export default function Information(): JSX.Element {
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
           <Typography>
-            {'Ya estás listo para la fiesta, nos vemos en Mayapo!'}
+            {'Ya estás listo para la fiesta ¡nos vemos en Mayapo!'}
           </Typography>
           <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
             Reiniciar tutorial

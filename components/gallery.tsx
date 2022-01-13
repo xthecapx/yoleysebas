@@ -33,6 +33,9 @@ export default function Gallery(): JSX.Element {
   return (
     <div className="gallery" id="gallery">
       <div className="container">
+        <h5 className="sec-subtitle">FOTOS DE NUESTRO COMPROMISO</h5>
+        <h2 className="sec-title">Momentos destacados</h2>
+        <p className="mb-4 sec-description">{`En este hermoso día, con el caribe inmenso de cómplice, decidimos dar el siguiente paso en nuestra relación.`}</p>
         <div className="image-row">
           {IMAGES.map((chunk, column) => (
             <div key={column} className="image-column">

@@ -3558,3 +3558,41 @@ section.error-404 .page-content p {
     transform: scale(1.5) rotate(10deg);
   }
 }
+
+.sec-title {
+  font-size: 30px;
+  line-height: 40px;
+  color: black;
+  font-family: Cormorant;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.sec-subtitle {
+  color: #c78665;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  font-family: 'Hind', sans-serif;
+  margin: 0;
+}
+
+.sec-description {
+  font-size: 17px;
+  text-align: justify;
+}
+
+.sec-footer {
+  color: #272727;
+  font-family: Cormorant;
+  font-size: 20px;
+}
+
+.sec-hashtag {
+  color: #272727;
+  font-family: Cormorant;
+  font-size: 50px;
+  font-weight: 700;
+}

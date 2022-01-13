@@ -1,24 +1,29 @@
 import Image from 'next/image'
 import mainImage from '../public/images/proposal/main-image.png'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material/styles'
 
 export default function Jumbotron(): JSX.Element {
+  const theme = useTheme()
+  const mobile = useMediaQuery(theme.breakpoints.down('md'))
+
   return (
     <div className="flex relative">
-      <div className="flex-1">
+      <div className="flex-1 main-image">
         <Image
           src={mainImage}
           alt="Main Image"
           placeholder="blur"
           quality="90"
-          layout="responsive"
+          layout={mobile ? 'fill' : 'responsive'}
         />
       </div>
       <div className="absolute top-0 left-0 message flex content-center items-center">
-        <div className="text-center flex-1">
+        <div className="text-center flex-1 text-mobile">
           <h2 className="name">Yole</h2>
           <h5 className="separator">&amp;</h5>
           <h2 className="name">Sebas</h2>
-          <p className="text">30 &bull; 04 &bull; 2022</p>
+          <p className="text mobile-space">30 &bull; 04 &bull; 2022</p>
           <p className="text">Mayapo &bull; La Guajira</p>
         </div>
       </div>
@@ -76,6 +81,10 @@ export default function Jumbotron(): JSX.Element {
         }
 
         @media (max-width: 640px) {
+          .main-image {
+            height: 60vh;
+          }
+
           .message {
             background-color: rgb(255, 255, 255, 0.8);
             width: 100%;
@@ -86,7 +95,7 @@ export default function Jumbotron(): JSX.Element {
           }
 
           .name {
-            font-size: 22px;
+            font-size: 35px;
             line-height: 40px;
           }
 
@@ -99,10 +108,14 @@ export default function Jumbotron(): JSX.Element {
             display: none;
           }
 
-          @media (max-width: 321px) {
-            .name {
-              line-height: 28px;
-            }
+          .mobile-space {
+            margin-top: 10px;
+          }
+        }
+
+        @media (min-width: 640px) {
+          .mobile-space {
+            margin-top: 10px;
           }
         }
       `}</style>

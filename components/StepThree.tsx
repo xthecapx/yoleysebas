@@ -20,7 +20,7 @@ export default function StepThree(): JSX.Element {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                En riohacha
+                En Riohacha
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {`Te puedes hospedar en Riohacha (aproximadamente a 31 kilómetros del Ipuana Virgin Beach).`}
@@ -38,10 +38,10 @@ export default function StepThree(): JSX.Element {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                En mayapo
+                En Mayapo
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {`Si eliges alojarte en Mayapo, puedes encontrar desde hostales hasta el hotel Wayira Beach.`}
+                {`Si eliges alojarte en Mayapo, puedes encontrar desde hostales hasta nuestro sugerido, hotel Wayira Beach.`}
               </Typography>
               <IconButton
                 color="primary"
@@ -53,6 +53,7 @@ export default function StepThree(): JSX.Element {
                 <i className="ti ti-instagram mr-2" />
               </IconButton>
               <LocationOnIcon
+                className="cursor-pointer"
                 sx={{ color: '#c78665', fontSize: 28 }}
                 onClick={() =>
                   window.open('https://goo.gl/maps/kfMSCytnzgs67rrB9')
