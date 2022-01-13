@@ -10,7 +10,7 @@ export default function Footer(): JSX.Element {
             </div>
             <div className="col-lg-12 text-center sec-footer">
               {`Cualquier duda que tengas, te puedes comunicar con
-              nuestra planner Gina García al 3002686222, o con cualquier a de
+              nuestra planner Gina García al 3002686222, o con cualquiera de
               nosotros.`}
             </div>
             <div className="col-lg-12 text-center sec-hashtag">
