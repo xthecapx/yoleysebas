@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const countDownDate = new Date('April 30, 2022 18:00:00').getTime()
+const countDownDate = new Date('April 30, 2022 16:00:00').getTime()
 
 function useInterval(callback, delay) {
   const savedCallback = useRef(null)

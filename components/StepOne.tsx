@@ -24,8 +24,11 @@ export default function StepOne(): JSX.Element {
 
   return (
     <>
-      <p className="mb-4 sec-description">
+      <p className="mb-2 sec-description">
         {`Nuestra boda será en un lugar mágico en el desierto de La Guajira, donde queremos compartir contigo la alegría que se desprende de dos palabras: “sí, acepto”.`}
+      </p>
+      <p className="mb-4 sec-description">
+        {`Ten en cuenta que durante parte del trayecto no habrá señal telefónica ni datos, por ende, si así lo requieres, descarga el mapa para navegación en Google Maps o en la aplicación de tu preferencia.`}
       </p>
       <div className="relative">
         <Grid container spacing={3}>
@@ -67,7 +70,7 @@ export default function StepOne(): JSX.Element {
                   Sábado, 30 Abril, 2022
                 </Typography>
                 <Typography variant="h5" component="div">
-                  {`4:30 PM – 2:00 AM`}
+                  {`4:00 PM – 2:00 AM`}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }}>Ipuana Virgin Beach</Typography>
                 <IconButton
